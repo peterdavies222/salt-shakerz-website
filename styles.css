@@ -674,6 +674,7 @@ nav ul li a.tiltright:hover {
     align-items: center;
     text-decoration: none;
     font-family: 'ostrich-sans';
+    color: var(--darkpurple);
 }
 
 .contact-addresses i {
