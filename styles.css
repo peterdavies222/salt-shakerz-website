@@ -285,14 +285,14 @@ nav ul li a.tiltright:hover {
     background-color: var(--darkpurple);
     color: var(--beige);
     transform: rotate(-2deg);
-    box-shadow: 10px 10px 0px var(--beige);
+    box-shadow: 5px 5px 0px var(--beige);
 }
 
 .a-t-blue {
     background-color: var(--lightblue) !important;
     color: var(--darkblue) !important;
     transform: rotate(2deg);
-    box-shadow: 10px 10px 0px var(--darkblue);
+    box-shadow: 5px 5px 0px var(--darkblue);
 }
 
 #about p span {
