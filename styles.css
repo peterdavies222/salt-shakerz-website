@@ -1,5 +1,13 @@
 /* =============================== General styling */
 
+html {
+    scroll-behavior: smooth;
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -63,18 +71,22 @@ section:not(#hero):not(#intro-quote) {
 /* =============================== Nav */
 
 nav {
-    margin: 15px 60px;
+    padding: 15px 60px;
     display: flex;
     align-items: center;
     position: fixed;
     z-index: 10000;
-    width: calc(100% - 120px);
+    width: 100%;
     top: 0;
     white-space: nowrap;
+    background: #FFFBF060;
+    backdrop-filter: blur(5px);
 }
 
 nav .logo {
     width: 60px;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 nav .logo:hover {
@@ -150,6 +162,7 @@ nav ul li a.tiltright:hover {
 
 #hero {
     background: linear-gradient(180deg, var(--lightbeige) 0%, var(--midbeige) 100%);
+    scroll-margin-top: 200px;
 }
 
 .hero-content {
@@ -170,7 +183,7 @@ nav ul li a.tiltright:hover {
 }
 
 .name-logo {
-    width: 80%;
+    width: 100%;
     margin-top: 30px;
     margin-bottom: 60px;
 }
@@ -215,6 +228,7 @@ nav ul li a.tiltright:hover {
 .hero-image {
     width: 40%;
     height: auto;
+    margin-bottom: 100px;
 }
 
 /* =============================== Intro quote (section) */
@@ -321,13 +335,44 @@ nav ul li a.tiltright:hover {
     padding: 60px;
 }
 
-#meet-hosts img {
+.profile-image {
     width: 200px;
 }
 
 #meet-hosts h2 {
     color: var(--beige);
     margin-bottom: 60px;
+}
+
+#meet-hosts h3 {
+    position: relative;
+    width: fit-content;
+}
+
+.ebony-underline, .esther-underline {
+    position: absolute;
+    right: 0;
+    width: 100px;
+}
+
+.ebony-underline {
+    bottom: -10px;
+}
+
+.ebony-stars {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+}
+
+.esther-underline {
+    bottom: -20px;
+}
+
+.esther-arrow {
+    position: absolute;
+    right: 230px;
+    bottom: 15px;
 }
 
 .profile-greeting {
@@ -377,6 +422,9 @@ nav ul li a.tiltright:hover {
 
 /* =============================== Episodes section */
 
+#episodes {
+    position: relative;
+}
 
 #episodes h2 {
     color: var(--turquoise);
@@ -400,6 +448,41 @@ nav ul li a.tiltright:hover {
     top: -12%;
     z-index: -1;
     transform: rotate(-2deg);
+}
+
+#episodes img {
+    position: absolute;
+    top: 60px;
+    right: 60px;
+}
+
+#episodes img:hover {
+    animation-name: smiley-bounce;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+:root {
+    --scale-amount: 1.2;
+}
+
+@keyframes smiley-bounce {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    25% {
+        transform: scale(var(--scale-amount)) translateY(-15%);
+    }
+    50% {
+        transform: scale(1) translateY(0);
+    }
+    75% {
+        transform: scale(var(--scale-amount)) translateY(-15%);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
 }
 
 .episodes-platform-title {
@@ -643,9 +726,18 @@ nav ul li a.tiltright:hover {
 #contact {
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 
-#contact img {
+.emphasis-icon {
+    position: absolute;
+    bottom: 60px;
+    right: 120px;
+    width: 80px;
+    transform: rotate(12deg);
+}
+
+.contact-speaking-saltshaker {
     width: 200px;
     align-self: center;
     margin-right: 60px;
