@@ -22,6 +22,7 @@ section {
     --midbeige: #F6E8C4;
     --darkpurple: #543787;
     --lightblue: #BAE0E5;
+    --navbg: #FFFBF060;
 }
 
 @font-face {
@@ -75,18 +76,21 @@ nav {
     display: flex;
     align-items: center;
     position: fixed;
-    z-index: 10000;
+    z-index: 9999;
     width: 100%;
     top: 0;
     white-space: nowrap;
-    background: #FFFBF060;
+    background: var(--navbg);
     backdrop-filter: blur(5px);
 }
 
 nav .logo {
     width: 60px;
-    padding-bottom: 0;
-    margin-bottom: 0;
+}
+
+nav .logo-container {
+    display: flex;
+    align-items: center;
 }
 
 nav .logo:hover {
@@ -158,6 +162,15 @@ nav ul li a.tiltright:hover {
     text-shadow: 2px 2px 0px var(--darkblue);
 }
 
+#menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--darkblue);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
 /* =============================== Hero section */
 
 #hero {
@@ -166,8 +179,8 @@ nav ul li a.tiltright:hover {
 }
 
 .hero-content {
-    margin: 180px 60px 0px 60px;
-    padding-bottom: 120px;
+    margin: 120px 60px 0px 60px;
+    padding-bottom: 60px;
     display: flex;
     justify-content: space-between;
 }
@@ -195,6 +208,7 @@ nav ul li a.tiltright:hover {
     font-size: 1.5rem;
     border-radius: 5px;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 #hero button span {
@@ -734,7 +748,10 @@ nav ul li a.tiltright:hover {
     bottom: 60px;
     right: 120px;
     width: 80px;
-    transform: rotate(12deg);
+    animation-name: emphasis;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.8s;
+    animation-iteration-count: infinite;
 }
 
 .contact-speaking-saltshaker {
@@ -786,6 +803,18 @@ nav ul li a.tiltright:hover {
     margin-right: 60px;
 }
 
+@keyframes emphasis {
+    0% {
+        transform: scale(1) rotate(12deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(42deg);
+    }
+    100% {
+        transform: scale(1) rotate(72deg);
+    }
+}
+
 /* =============================== Footer section */
 
 footer {
@@ -807,4 +836,58 @@ footer::before {
     position: absolute;
     border-top-left-radius: 100%;
     border-top-right-radius: 100%;
+}
+
+/* =============================== Responsive design */
+
+@media screen and (max-width: 1150px) {
+    #hero button {
+        font-size: 1.2rem;
+        width: 180px;
+        height: 36px;
+    }
+    #hero-listen {
+        margin-right: 15px;
+    }
+}
+@media screen and (max-width: 1000px) {
+    nav ul {
+        /*visibility: hidden;*/
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: fixed;
+        z-index: 10000;
+        right: 0;
+        transform: translateX(100%);
+        background-color: red;
+        padding-left: 0;
+        transition: all 0.2s ease-in-out;
+        background-color: var(--lightbeige);
+        border-radius: 10px 0 0 10px;
+        border: solid var(--darkpurple) 3px;
+        border-right: none;
+    }
+    nav ul li {
+        text-align: left;
+    }
+    nav ul li:first-child{
+        padding-top: 10px;
+    }
+    nav ul li:last-child{
+        padding-bottom: 10px;
+    }
+    nav .tiltleft, nav.tiltright {
+        text-align: left;
+    }
+    nav ul.visible {
+        visibility: visible;
+        transform: translateX(0);
+    }
+    nav {
+        justify-content: space-between;
+    }
+    #menu-button {
+        display: block;
+    }
 }
