@@ -415,7 +415,6 @@ nav ul li a.tiltright:hover {
     left: 0;
     background-color: var(--lightbeige);
     box-shadow: 10px 10px 0px var(--darkpurple);
-
 }
 
 .profile-card-container.profile-1::before {
