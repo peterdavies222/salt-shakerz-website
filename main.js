@@ -22,5 +22,5 @@ let ulHeight = navUl.offsetHeight;
 navUl.style.top = 0.5*(navHeight + window.innerHeight - ulHeight) + 'px';
 
 setTimeout(() => {
-    alert("Please note that this site is currently only functional on desktop screens. If you're using a phone or tablet, it may not run as expected just yet!");
+    alert("Please note that this site is currently only functional on desktop screens. If you're using a phone or tablet, it may not run as expected... yet!");
   }, 100)
