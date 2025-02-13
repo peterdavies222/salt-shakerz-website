@@ -16,8 +16,10 @@
                 <li><a href="#meet-hosts" class="tiltright"><span>Meet Your Hosts</span></a></li>
                 <li><a href="#episodes" class="tiltleft"><span>Episodes</span></a></li>
                 <li><a href="#highlights" class="tiltright"><span>Highlights</span></a></li>
+                <!--
                 <li><a href="#merch" class="tiltleft"><span>Digital Merch</span></a></li>
                 <li><a href="#socials" class="tiltright"><span>Socials</span></a></li>
+            -->
                 <li><a href="#contact" class="tiltleft"><span>Get In Touch</span></a></li>
             </ul>
             <button id="menu-button"><i class="fa-solid fa-bars"></i></button>
@@ -46,7 +48,7 @@
 
         <section id="intro-quote">
             <div class="quote-container">
-                <div class="image-placeholder"></div>
+                <img src="images/smiley-speech.png">
                 <p class="intro-text">“Single-sentence quote or message to summarise the podcast and get people interested.”</p>
             </div>
         </section>
@@ -55,7 +57,19 @@
             <img src="images/speaking-shaker-2.png" alt="Speaking salt shaker illustration.">
             <div class="about-right">
                 <h2>So, what's the Salt Shakerz podcast all about?</h2>
-                <p class="body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ea sequi voluptatem rem quaerat rerum reiciendis! Nisi corrupti nulla recusandae obcaecati vitae. Voluptate quia temporibus autem, vel itaque possimus velit?</p>
+                <p class="body-text">
+                    <strong>
+                        Salt Shakerz is the podcast for young Australian women who are seeking a grounded, 
+                        biblically-rooted perspective on life's struggles.
+                    </strong>
+                    <br><br>
+                    Our mission is to foster freedom in identity and life through candid, 
+                    biblically-centered conversations that resonate with the real-life struggles of young women. 
+                    We aim to provide an authentic space where you can explore what it means to be truly seen, 
+                    loved, and valued in Christ—just as you are—and how that can influence your life. Through stories of imperfect 
+                    faith and personal growth, we’re here to remind you that grace is a journey and that God’s 
+                    truth speaks to every part of who you are, even the parts you feel might not “measure up.”
+                </p>
                 <div class="about-taglines">
                     <p class="a-t-purple a-t-1"><span>Connecting with God</span></p>
                     <p class="a-t-blue a-t-2"><span>Empowering young women</span></p>
@@ -98,7 +112,7 @@
             <h2>Wanna catch up on <span>episodes?</span></h2>
             <img class="smiley" src="images/smiley-face.svg" alt="Blue hand-drawn smiley face">
             <div class="spotify">
-                <p class="episodes-platform-title"><i class="fa-brands fa-spotify"></i>Listen on Spotify:</p>
+                <p class="episodes-platform-title"><span class="spotify-logo"><i class="fa-brands fa-spotify"></i></span>Listen on Spotify:</p>
                 <div class="spotify-episodes">
                     <a href="https://open.spotify.com/episode/4lRhXmWlpfHNZwqBXeuDxb?si=khh0VeG4RFSSZCRcRDFn2g" class="spotify-episode-listing">
                         <div class="spotify-thumbnail">
@@ -138,7 +152,7 @@
                 </div>
             </div>
             <div class="youtube">
-                <p class="episodes-platform-title"><i class="fa-brands fa-youtube"></i>Watch us on YouTube:</p>
+                <p class="episodes-platform-title"><span class="youtube-logo"><i class="fa-brands fa-youtube"></i></span>Watch us on YouTube:</p>
                 <div class="youtube-episodes">
                     <a href="https://youtu.be/6qoMMtOBFDU?si=wqJBrqZGw1bP5N4d" class="youtube-episode-listing">
                         <div class="youtube-thumbnail">
@@ -183,20 +197,30 @@
 
         <section id="highlights">
             <h2>Get the highlights!</h2>
-            <div class="highlights-carousel">
+            <div class="highlights-carousel-container">
                 <div class="highlights-button-container">
-                    <button class="highlights-button"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="highlights-button highlights-back inactive"><i class="fa-solid fa-chevron-left"></i></button>
                 </div>
-                <div class="highlight-item">
-                    <img class="quotation-mark" src="images/quotation-mark.svg">
-                    <p class="highlights-quote">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, doloremque laborum sunt iste numquam cupiditate commodi perferendis dolorem voluptatem ab accusamus molestiae ut odio ducimus aliquid voluptatum? At, distinctio repellendus?</p>
-                    <p class="highlights-attribution">- Ebony, Episode 3, 10:24</p>
+                
+                <div class="highlights-carousel">
+                    <div class="highlight-item highlight-item-a">
+                        <img class="quotation-mark" src="images/quotation-mark.svg">
+                        <p class="highlights-quote">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, doloremque laborum sunt iste numquam cupiditate commodi perferendis dolorem voluptatem ab accusamus molestiae ut odio ducimus aliquid voluptatum? At, distinctio repellendus?</p>
+                        <p class="highlights-attribution">- Ebony, Episode 3, 10:24</p>
+                    </div>
+                    <div class="highlight-item">
+                        <img class="quotation-mark" src="images/quotation-mark.svg">
+                        <p class="highlights-quote">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptate, doloremque laborum sunt iste numquam cupiditate commodi perferendis dolorem voluptatem ab accusamus molestiae ut odio ducimus aliquid voluptatum? At, distinctio repellendus?</p>
+                        <p class="highlights-attribution">- Ebony, Episode 3, 10:24</p>
+                    </div>
                 </div>
                 <div class="highlights-button-container">
-                    <button class="highlights-button"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="highlights-button highlights-next"><i class="fa-solid fa-chevron-right"></i></button>
                 </div>
             </div>
         </section>
+
+        <!--
 
         <section id="merch">
             <h2>Check out our <span>free</span> digital merch!</h2>
@@ -245,12 +269,17 @@
             </div>
         </section>
 
+    -->
+
         <section id="contact">
             <img class="emphasis-icon" src="images/emphasis-icon.svg" alt="Beige emphasis icon.">
             <img class="contact-speaking-saltshaker" src="images/speaking-shaker-2.png" alt="Speaking salt shaker illustration.">
             <div class="contact-right">
                 <h2>Would you like to get in touch?</h2>
-                <p class="body-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur ea sequi voluptatem rem quaerat rerum reiciendis! Nisi corrupti nulla recusandae obcaecati vitae. Voluptate quia temporibus autem, vel itaque possimus velit?</p>
+                <p class="body-text">
+                    Whether you'd like to ask that burning question, comment on a topic brought up in the podcast, share your 
+                    thoughts, or shake up the salt, we're always here to listen. Simply send us a message — we can't wait to hear from you!
+                </p>
                 <div class="contact-addresses">
                     <a href="#" class="contact-email">
                         <i class="fa-regular fa-paper-plane"></i>
@@ -265,7 +294,13 @@
         </section>
 
         <footer>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque officiis ipsam nobis dolorum, esse sequi neque velit eveniet labore quo? Sunt ea beatae ipsa amet quos laborum accusamus! Perspiciatis, cumque.
+            
+            <p>
+                This site uses material from external sources. Want to see the full references? Take a look in the code comments!
+            </p>
+            <a href="#hero">
+                <img src="images/logo-no-background.svg">
+            </a>
         </footer>
     </main>
 
