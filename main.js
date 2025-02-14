@@ -21,10 +21,11 @@ let ulHeight = navUl.offsetHeight;
 
 navUl.style.top = 0.5*(navHeight + window.innerHeight - ulHeight) + 'px';
 
+/*
 setTimeout(() => {
     alert("Please note that this site is currently only functional on desktop screens. If you're using a phone or tablet, it may not run as expected... yet!");
   }, 100)
-
+*/
 
 const highlightsCarousel = document.querySelector('.highlights-carousel');
 const highlightsBackBtn = document.querySelector('.highlights-back');
@@ -44,7 +45,7 @@ setInterval(() => {
     if(highlightsCarousel.scrollLeft == 0){
         highlightsBackBtn.classList.add('inactive');
         highlightsNextBtn.classList.remove('inactive');
-    } else if(highlightsCarousel.scrollLeft == highlightsCarouselItemWidth + 30){
+    } else if(highlightsCarousel.scrollLeft == 2*highlightsCarouselItemWidth + 60){
         highlightsBackBtn.classList.remove('inactive');
         highlightsNextBtn.classList.add('inactive');
     } else {
