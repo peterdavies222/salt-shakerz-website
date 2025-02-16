@@ -558,9 +558,35 @@ nav .responsive-btn {
     }
 }
 
+.episodes-platform-title-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.episodes-slide-right {
+    border: none;
+    background: none;
+    font-size: 1.8rem;
+    color: var(--darkblue);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 60px;
+}
+
+.episodes-slide-right.spotify, .episodes-slide-right.youtube {
+    display: none;
+}
+
+.episodes-slide-right i:first-child {
+    transform: translateX(5px);
+}
+
 .episodes-platform-title {
     font-family: 'ostrich-sans';
-    margin-bottom: 30px;
     font-size: 2rem;
 }
 
@@ -581,6 +607,7 @@ nav .responsive-btn {
 .spotify-episodes, .youtube-episodes {
     display: flex;
     overflow-x: scroll;
+    scroll-behavior: smooth;
 }
 
 .spotify-episodes {
@@ -1415,6 +1442,12 @@ footer img:hover {
         bottom: 30px;
     }
     #episodes img.smiley {
+        right: 30px;
+    }
+    .episodes-platform-title {
+        max-width: calc(100% - 90px);
+    }
+    .episodes-slide-right {
         right: 30px;
     }
     .spotify-episode-listing, .youtube-episode-listing {
