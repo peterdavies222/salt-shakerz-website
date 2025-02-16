@@ -2,7 +2,35 @@ console.log ("JavaScript is working!");
 
 const menuButton = document.querySelector('#menu-button');
 const navLinks = document.querySelector('nav ul');
+let navLinksHeight = navLinks.scrollHeight;
 
+window.addEventListener('load', ()=> {
+    navLinksHeight = navLinks.scrollHeight;
+    console.log(navLinksHeight);
+    navLinks.style.top = `-${navLinksHeight}px`;
+});
+
+window.addEventListener('resize', ()=> {
+    navLinksHeight = navLinks.scrollHeight;
+    console.log(navLinksHeight);
+    if(!navLinks.classList.contains('visible')){
+        navLinks.style.top = `-${navLinksHeight}px`;
+    };
+});
+
+menuButton.addEventListener('click', ()=> {
+    navLinks.classList.toggle('active');
+    console.log(navLinks.classList);
+});
+
+const navLinksElements = document.querySelectorAll('nav ul li');
+navLinksElements.forEach(element => {
+    element.addEventListener('click', ()=> {
+        navLinks.classList.remove('active');
+    });
+});
+
+/*
 menuButton.addEventListener('click', function(){
     navLinks.classList.toggle('visible');
 });
@@ -18,8 +46,8 @@ let nav = document.querySelector('nav');
 let navHeight = nav.offsetHeight;
 let navUl = document.querySelector('nav ul');
 let ulHeight = navUl.offsetHeight;
-
-navUl.style.top = 0.5*(navHeight + window.innerHeight - ulHeight) + 'px';
+*/
+// navUl.style.top = 0.5*(navHeight + window.innerHeight - ulHeight) + 'px';
 
 /*
 setTimeout(() => {
@@ -32,6 +60,9 @@ const highlightsBackBtn = document.querySelector('.highlights-back');
 const highlightsNextBtn = document.querySelector('.highlights-next');
 
 let highlightsCarouselItemWidth = document.querySelector('.highlight-item-a').offsetWidth;
+window.addEventListener('resize', ()=> {
+    highlightsCarouselItemWidth = document.querySelector('.highlight-item-a').offsetWidth;
+})
 
 highlightsBackBtn.addEventListener('click', ()=> {
     highlightsCarousel.scrollLeft -= (highlightsCarouselItemWidth + 30);
@@ -45,7 +76,7 @@ setInterval(() => {
     if(highlightsCarousel.scrollLeft == 0){
         highlightsBackBtn.classList.add('inactive');
         highlightsNextBtn.classList.remove('inactive');
-    } else if(highlightsCarousel.scrollLeft == 2*highlightsCarouselItemWidth + 60){
+    } else if(2*highlightsCarouselItemWidth + 50 < highlightsCarousel.scrollLeft && highlightsCarousel.scrollLeft < 2*highlightsCarouselItemWidth + 70){
         highlightsBackBtn.classList.remove('inactive');
         highlightsNextBtn.classList.add('inactive');
     } else {

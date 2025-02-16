@@ -24,6 +24,7 @@ section {
     --beige: #FFEBAE;
     --midbeige: #F6E8C4;
     --darkpurple: #543787;
+    --purple: #7957b5;
     --lightblue: #BAE0E5;
     --lightbluetranslucent: #BAE0E566;
     --navbg: #FFFBF060;
@@ -134,6 +135,7 @@ nav .logo:hover {
 nav ul {
     display: flex;
     list-style: none;
+    transition: all 0s !important;
 }
 
 nav ul li a {
@@ -152,14 +154,14 @@ nav li span {
     transform: translateY(2px);
 }
 
-nav ul li a.tiltleft:hover {
+nav .tiltleft:hover {
     background-color: var(--turquoise);
     color: var(--beige);
     transform: scale(1.1) rotate(-1deg);
     text-shadow: 2px 2px 0px var(--darkblue);
 }
 
-nav ul li a.tiltright:hover {
+nav .tiltright:hover {
     background-color: var(--turquoise);
     color: var(--beige);
     transform: scale(1.1) rotate(1deg);
@@ -172,6 +174,26 @@ nav ul li a.tiltright:hover {
     border: none;
     color: var(--darkblue);
     font-size: 1.5rem;
+    cursor: pointer;
+}
+
+nav .responsive-btn {
+    display: none;
+    margin: auto;
+}
+
+.responsive-btn.logo-li a {
+    padding: 0;
+    margin-top: 30px;
+}
+
+.responsive-btn.cross button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--darkblue);
+    margin: auto;
+    margin-bottom: 30px;
     cursor: pointer;
 }
 
@@ -205,6 +227,10 @@ nav ul li a.tiltright:hover {
     margin-bottom: 60px;
 }
 
+.name-logo-centred {
+    display: none;
+}
+
 #hero .buttons {
     display: flex;
 }
@@ -217,6 +243,7 @@ nav ul li a.tiltright:hover {
     border-radius: 5px;
     cursor: pointer;
     white-space: nowrap;
+    transition: all 0s;
 }
 
 #hero button span {
@@ -468,6 +495,7 @@ nav ul li a.tiltright:hover {
 
 #episodes {
     position: relative;
+    padding-right: 0 !important;
 }
 
 #episodes h2 {
@@ -477,11 +505,12 @@ nav ul li a.tiltright:hover {
 
 #episodes h2 span {
     color: var(--beige);
-    position: relative;
-    z-index: 10;
-    margin-left: 10px;
+    background: var(--darkpurple);
+    padding: 5px;
+    transform: rotate(-2deg);
+    display: inline-block;
 }
-
+/*
 #episodes h2 span::before {
     content: '';
     width: 110%;
@@ -493,7 +522,7 @@ nav ul li a.tiltright:hover {
     z-index: -1;
     transform: rotate(-2deg);
 }
-
+*/
 #episodes img.smiley {
     position: absolute;
     top: 60px;
@@ -551,6 +580,7 @@ nav ul li a.tiltright:hover {
 
 .spotify-episodes, .youtube-episodes {
     display: flex;
+    overflow-x: scroll;
 }
 
 .spotify-episodes {
@@ -559,22 +589,33 @@ nav ul li a.tiltright:hover {
 
 .spotify-episode-listing {
     width: 200px;
+    max-width: calc(100% - 30px);
     margin-right: 60px;
+    flex-shrink: 0;
 }
 
 .youtube-episode-listing {
     width: calc(200px*16/9);
+    max-width: calc(100% - 30px);
     margin-right: 60px;
+    flex-shrink: 0;
 }
 
 .spotify-thumbnail, .youtube-thumbnail {
     width: 100%;
-    height: 200px;
     border-radius: 10px;
     box-shadow: 10px 10px 0px var(--beige); 
     margin-bottom: 30px;
     position: relative;
     cursor: pointer;
+}
+
+.spotify-thumbnail {
+    aspect-ratio: 1;
+}
+
+.youtube-thumbnail {
+    aspect-ratio: calc(16/9);
 }
 
 .spotify-thumbnail-img, .youtube-thumbnail-img {
@@ -941,6 +982,7 @@ nav ul li a.tiltright:hover {
 
 #contact .contact-addresses {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .contact-addresses a {
@@ -984,7 +1026,6 @@ footer {
     padding: 60px;
     border-radius: 30px 30px 0 0;
     position: relative;
-    margin-top: 30px;
     color: var(--lightbeige);
     display: flex;
     align-items: center;
@@ -1005,54 +1046,421 @@ footer img:hover {
 
 /* =============================== Responsive design */
 
+@media screen and (max-width: 1300px) {
+    .a-t-3 {
+        left: 48%
+    }
+}
+@media screen and (max-width: 1250px) {
+    .a-t-2 {
+        left: 18%;
+    }
+    .a-t-3 {
+        left: 45%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .a-t-2 {
+        left: 14%;
+    }
+    .a-t-3 {
+        left: 40%;
+    }
+    .about-taglines {
+        height: 135px;
+    }
+}
+
 @media screen and (max-width: 1150px) {
+    #hero h2 {
+        font-size: 1.2rem;
+    }
     #hero button {
         font-size: 1.2rem;
         width: 180px;
         height: 36px;
+        font-weight:normal !important;
     }
     #hero-listen {
         margin-right: 15px;
     }
+    #hero .buttons button span {
+        transform: translateY(2px);
+    }
+    .a-t-2 {
+        left: 10%;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .about-taglines {
+        height: 120px;
+    }
+    .about-taglines p {
+        font-size: 1.5rem;
+    }
+    .a-t-2 {
+        left: 16%;
+    }
+    .emphasis-icon {
+        right: 60px;
+    }
 }
 @media screen and (max-width: 1000px) {
-    nav ul {
-        /*visibility: hidden;*/
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        position: fixed;
-        z-index: 10000;
-        right: 0;
-        transform: translateX(100%);
-        background-color: red;
-        padding-left: 0;
-        transition: all 0.2s ease-in-out;
-        background-color: var(--lightbeige);
-        border-radius: 10px 0 0 10px;
-        border: solid var(--darkpurple) 3px;
-        border-right: none;
+    .body-text {
+        font-size: 1rem;
     }
-    nav ul li {
-        text-align: left;
-    }
-    nav ul li:first-child{
-        padding-top: 10px;
-    }
-    nav ul li:last-child{
-        padding-bottom: 10px;
-    }
-    nav .tiltleft, nav.tiltright {
-        text-align: left;
-    }
-    nav ul.visible {
-        visibility: visible;
-        transform: translateX(0);
+    h2 {
+        font-size: 2rem;
     }
     nav {
         justify-content: space-between;
+        height: 60px;
+    }
+    nav .logo:not(.responsive-btn .logo) {
+        width: 45px;
+    }
+    nav #menu-button {
+        font-size: 1.2rem;
+    }
+    nav ul {
+        width: 100vw;
+        height: fit-content;
+        flex-direction: column;
+        gap: 15px;
+        background-color: var(--lightbeige);
+        border-radius: 0 0 30px 30px;
+        padding-left: 0;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0);
+
+        position: fixed;
+        left: 0;
+        z-index: 1000;
+        visibility: hidden;
+        opacity: 0;
+
+        transition: all 0.4s !important;
+    }
+    nav ul.active {
+        top: 0 !important;
+        visibility: visible;
+        box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.4);
+        opacity: 1;
+    }
+    nav ul li a {
+        font-size: 2rem;
+    }
+    nav ul li a.tiltleft:hover {
+        background-color: transparent !important;
+        color: inherit;
+        transform: none !important;
+        text-shadow: none !important;
+    }
+    nav ul li a.tiltright:hover {
+        background-color: transparent !important;
+        color: inherit;
+        transform: none !important;
+        text-shadow: none !important;
     }
     #menu-button {
         display: block;
+    }
+    nav .responsive-btn {
+        display: block;
+    }
+    #hero {
+        margin-top: 0;
+    }
+    .hero-content {
+        padding-bottom: 60px;
+        margin-top: 60px;
+    }
+    #about {
+        align-items: top !important;
+        padding-bottom: 95px !important;
+    }
+    #about img {
+        align-self: self-start;
+    }
+    #about .about-right {
+        position: relative;
+    }
+    .about-taglines {
+        position: absolute;
+        width: calc(100vw - 120px);
+        height: fit-content;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    .about-taglines p {
+        position: static;
+        width: fit-content;
+        height: fit-content;
+        flex-grow: 0;
+        padding: 8px;
+        font-size: 1rem;
+    }
+    #about p span {
+        transform: translateY(1px) !important;
+    }
+    #meet-hosts p {
+        font-size: 1rem;
+    }
+    #highlights h3 {
+        font-size: 1rem;
+    }
+    p.highlights-quote {
+        font-size: 1.5rem;
+    }
+    #contact p.body-text {
+        margin: 45px 0;
+    }
+    .contact-addresses {
+        max-width: calc(100% - 100px);
+    }
+    .contact-addresses a {
+        line-height: 200%;
+    }
+    .contact-email {
+        margin-right: 30px;
+    }
+    footer p {
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 900px) {
+    #meet-hosts .profile-card-container {
+        align-items:flex-start;
+    }
+    #meet-hosts .profile-img-container {
+        width: 200px;
+        height:max-content;
+    }
+    #meet-hosts .profile-img {
+        top: 0;
+    }
+    .ebony-stars {
+        bottom: 30px;
+        left: 30px;
+        top: auto;
+        right: auto;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .hero-left {
+        width: 100%;
+    }
+    #hero h2 {
+        text-align: center;
+    }
+    .name-logo {
+        width: 90%;
+        margin-left: 5%;
+    }
+    .name-logo-left {
+        display: none;
+    }
+    .name-logo-centred {
+        display: block;
+    }
+    .hero-image {
+        display: none;
+    }
+    #hero .buttons {
+        justify-content: space-between;
+    }
+    #hero .buttons button {
+        margin-right: 0;
+    }
+    #intro-quote .quote-container {
+        padding: 15px;
+    }
+    #intro-quote img {
+        width: 60px;
+        margin-right: 15px;
+    }
+    #intro-quote .intro-text {
+        font-size: 1.5rem;
+    }
+    #episodes h2 {
+        max-width: calc(100% - 150px);
+    }
+    #highlights .highlights-back {
+        transform: translateX(-30px);
+    }
+    #highlights .highlights-next {
+        transform: translateX(30px);
+    }
+    .highlights-carousel-container {
+        gap: 0;
+    }
+    p.highlights-quote {
+        padding-left: 0;
+        margin-left: 15px;
+    }
+    .highlights-attribution {
+        margin-left: 15px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .buttons {
+        flex-direction: column;
+        margin: auto;
+    }
+    #hero button {
+        width: 100%;
+    }
+    #hero button:not(#hero-more) {
+        margin-bottom: 10px;
+    }
+    #about {
+        flex-direction: column;
+        padding-bottom: 60px !important;
+    }
+    #about img {
+        width: 100px;
+        transform: translateY(-30px);
+    }
+    #about .about-right .body-text {
+        margin-bottom: 30px;
+    }
+    .about-taglines {
+        position: static;
+        flex-wrap: wrap;
+    }
+    .about-taglines p {
+        width: 45%;
+        text-align: center;
+    }
+    .a-t-3 {
+        order: 4;
+        margin-top: 15px;
+    }
+    .a-t-4 {
+        margin-top: 15px;
+    }
+    .profile-card-container {
+        flex-direction: column;
+    }
+    .profile-img-container {
+        width: 100% !important;
+        height: fit-content;
+        margin-bottom: 30px;
+    }
+    .profile-img {
+        height: 250px !important;
+        object-fit: cover;
+        position: static;
+    }
+    .ebony-stars {
+        right: 30px;
+        bottom: 15px;
+        left: auto;
+        top: auto;
+    }
+    #contact {
+        flex-direction: column;
+    }
+    .contact-speaking-saltshaker {
+        align-self: self-start;
+        transform: translateY(-30px);
+        width: 100px;
+    }
+    .emphasis-icon {
+        top: 60px;
+        right: 60px;
+        bottom: auto;
+        width: 50px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav {
+        padding: 15px 30px;
+    }
+    section:not(#hero):not(#intro-quote) {
+        padding: 60px 30px;
+    }
+    .hero-content {
+        margin: 60px 30px 0px 30px;
+        padding-bottom: 60px;
+    }
+    .name-logo {
+        width: 100%;
+        margin-left: 0;
+    }
+    #intro-quote .quote-container {
+        flex-direction: column;
+    }
+    #intro-quote img {
+        margin: 0 0 15px 0;
+    }
+    .intro-text {
+        text-align: center;
+    }
+    .about-taglines {
+        width: 100%;
+    }
+    .profile-card-container::before {
+        transform: none !important;
+    }
+    .profile-img-container {
+        transform: none !important;
+    }
+    .ebony-stars {
+        width: 60px;
+        right: 15px;
+        bottom: 30px;
+    }
+    #episodes img.smiley {
+        right: 30px;
+    }
+    .spotify-episode-listing, .youtube-episode-listing {
+        margin-right: 30px;
+    }
+    .highlights-carousel-container {
+        gap: 10px;
+    }
+    #highlights button {
+        transform: none !important;
+        width: 45px !important;
+        height: 45px;
+        font-size: 1rem;
+        border: solid var(--lightbeige) 2px;
+    }
+    p.highlights-quote {
+        font-size: 1.3rem;
+    }
+    footer {
+        padding: 60px 30px;
+        gap: 30px;
+    }
+}
+@media screen and (max-width: 450px) {
+    .about-taglines {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .about-taglines p {
+        width: 100%;
+    }
+    .a-t-purple {
+        transform: rotate(-1deg);
+    }
+    .a-t-blue {
+        transform: rotate(1deg);
+    }
+    .a-t-3 {
+        order: 3;
+        margin: auto;
+    }
+    .a-t-4 {
+        order: 4;
+        margin: auto;
+    }
+    p.highlights-quote {
+        font-size: 1rem;
     }
 }
