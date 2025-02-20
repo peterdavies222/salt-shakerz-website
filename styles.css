@@ -244,7 +244,7 @@ nav .responsive-btn {
     border-radius: 5px;
     cursor: pointer;
     white-space: nowrap;
-    transition: all 0s;
+    transition: all 0.2s;
 }
 
 #hero button span {
@@ -257,7 +257,6 @@ nav .responsive-btn {
     background-color: var(--darkpurple);
     border: none;
     margin-right: 15px;
-    transition: all 0.2s;
 }
 
 #hero-listen i, #hero-view i {
@@ -497,11 +496,13 @@ nav .responsive-btn {
 #episodes {
     position: relative;
     padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 
 #episodes h2 {
     color: var(--turquoise);
     margin-bottom: 60px;
+    margin-left: 60px;
 }
 
 #episodes h2 span {
@@ -563,8 +564,9 @@ nav .responsive-btn {
     display: flex;
     justify-content: space-between;
     position: relative;
-    width: 100%;
     margin-bottom: 30px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 .episodes-slide-right {
@@ -575,7 +577,7 @@ nav .responsive-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 60px;
+    right: 0;
 }
 
 .episodes-slide-right.spotify, .episodes-slide-right.youtube {
@@ -609,6 +611,22 @@ nav .responsive-btn {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth;
+    padding-left: 60px;
+    padding-right: 60px;
+    gap: 60px;
+}
+
+.spotify-episodes::-webkit-scrollbar, .youtube-episodes::-webkit-scrollbar {
+    display: none;
+}
+
+.episodes-line {
+    margin-left: 60px;
+    margin-right: 60px;
+    margin-bottom: 60px;
+    height: 5px;
+    background-color: var(--lightbluetranslucent);
+    border-radius: 10px;
 }
 
 .spotify-episodes {
@@ -618,14 +636,12 @@ nav .responsive-btn {
 .spotify-episode-listing {
     width: 200px;
     max-width: calc(100% - 30px);
-    margin-right: 60px;
     flex-shrink: 0;
 }
 
 .youtube-episode-listing {
     width: calc(200px*16/9);
     max-width: calc(100% - 30px);
-    margin-right: 60px;
     flex-shrink: 0;
 }
 
@@ -691,6 +707,7 @@ nav .responsive-btn {
 .spotify-thumbnail:hover .play-icon, .spotify-thumbnail:hover .play-icon-backdrop, .youtube-thumbnail:hover .play-icon, .youtube-thumbnail:hover .play-icon-backdrop {
     display: block;
 }
+
 
 /* Thumbnails for channel links */
 
@@ -1297,10 +1314,20 @@ footer img:hover {
         display: none;
     }
     #hero .buttons {
-        justify-content: space-between;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 10px;
+    }
+    #hero .buttons a {
+        margin-right: 0;
+        width: 300px;
     }
     #hero .buttons button {
-        margin-right: 0;
+        width: 100%;
+    }
+    #hero .buttons button:hover {
+        transform: none !important;
     }
     #intro-quote .quote-container {
         padding: 15px;
@@ -1313,7 +1340,7 @@ footer img:hover {
         font-size: 1.5rem;
     }
     #episodes h2 {
-        max-width: calc(100% - 150px);
+        max-width: calc(100% - 210px);
     }
     #highlights .highlights-back {
         transform: translateX(-30px);
@@ -1337,11 +1364,11 @@ footer img:hover {
         flex-direction: column;
         margin: auto;
     }
-    #hero button {
+    #hero .buttons a {
         width: 100%;
     }
-    #hero button:not(#hero-more) {
-        margin-bottom: 10px;
+    #hero button {
+        width: 100% !important;
     }
     #about {
         flex-direction: column;
@@ -1362,12 +1389,16 @@ footer img:hover {
         width: 45%;
         text-align: center;
     }
+    .a-t-2 {
+        transform: rotate(-2deg);
+    }
     .a-t-3 {
         order: 4;
         margin-top: 15px;
     }
     .a-t-4 {
         margin-top: 15px;
+        transform: rotate(-2deg);
     }
     .profile-card-container {
         flex-direction: column;
@@ -1442,16 +1473,26 @@ footer img:hover {
         right: 15px;
         bottom: 30px;
     }
+    #episodes h2 {
+        margin-left: 30px;
+    }
     #episodes img.smiley {
         right: 30px;
+    }
+    .episodes-platform-title-container {
+        margin-left: 30px;
+        margin-right: 30px;
     }
     .episodes-platform-title {
         max-width: calc(100% - 90px);
     }
-    .episodes-slide-right {
-        right: 30px;
+    .spotify-episodes, .youtube-episodes {
+        padding-left: 30px;
+        padding-right: 30px;
+        gap: 30px;
     }
-    .spotify-episode-listing, .youtube-episode-listing {
+    .episodes-line {
+        margin-left: 30px;
         margin-right: 30px;
     }
     .highlights-carousel-container {
