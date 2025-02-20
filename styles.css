@@ -1456,6 +1456,9 @@ footer img:hover {
         bottom: auto;
         width: 50px;
     }
+    footer p, footer a {
+        font-weight: 500;
+    }
 }
 
 @media screen and (max-width: 500px) {
