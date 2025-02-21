@@ -800,7 +800,7 @@ nav .responsive-btn {
     cursor: pointer;
     font-weight: bold;
     font-size: 2rem;
-    transition: opacity 0.2s;
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .highlights-carousel-container button.inactive {
