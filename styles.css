@@ -136,7 +136,7 @@ nav .logo:hover {
 nav ul {
     display: flex;
     list-style: none;
-    transition: all 0s !important;
+    transition: all 0s;
 }
 
 nav ul li a {
@@ -147,7 +147,7 @@ nav ul li a {
     display: grid;
     place-items: center;
     font-size: 1.1rem;
-    transition: all 0.2s;
+    transition: all 0.2s, font-size 0s;
     cursor: pointer !important;
 }
 
@@ -578,6 +578,7 @@ nav .responsive-btn {
     top: 50%;
     transform: translateY(-50%);
     right: 0;
+    cursor: pointer;
 }
 
 .episodes-slide-right.spotify, .episodes-slide-right.youtube {
@@ -799,7 +800,7 @@ nav .responsive-btn {
     cursor: pointer;
     font-weight: bold;
     font-size: 2rem;
-    transition: all 0.2s;
+    transition: opacity 0.2s;
 }
 
 .highlights-carousel-container button.inactive {
@@ -1207,7 +1208,7 @@ footer img:hover {
         visibility: hidden;
         opacity: 0;
 
-        transition: all 0.4s !important;
+        transition: all 0s;
     }
     nav ul.active {
         top: 0 !important;
@@ -1522,7 +1523,13 @@ footer img:hover {
         margin-right: 30px;
     }
     .highlights-carousel-container {
-        gap: 10px;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .highlights-carousel {
+        order: -1;
+        margin-bottom: 30px;
     }
     #highlights button {
         transform: none !important;

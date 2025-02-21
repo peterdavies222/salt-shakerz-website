@@ -16,6 +16,9 @@ window.addEventListener('resize', ()=> {
     if(!navLinks.classList.contains('visible')){
         navLinks.style.top = `-${navLinksHeight}px`;
     };
+    if(window.innerWidth > 1000) {
+        navLinks.classList.remove('active');
+    }
 });
 
 menuButton.addEventListener('click', ()=> {
@@ -29,6 +32,34 @@ navLinksElements.forEach(element => {
         navLinks.classList.remove('active');
     });
 });
+
+// dealing with transition time for nav ul
+/*
+window.addEventListener('load', ()=> {
+    if(window.innerWidth <= 1000) {
+        alert('window is less than or equal to 1000px');
+    };
+});
+*/
+
+function navBarTransition() {
+    if(window.innerWidth <= 1000) {
+        setTimeout(() => {
+            navLinks.style.transition = 'all 0.4s';
+          }, 100);
+    };
+    if(window.innerWidth >= 1000) {
+        navLinks.style.transition = 'all 0s';
+    };
+};
+
+window.addEventListener('resize', ()=> {
+    navBarTransition();
+});
+
+window.addEventListener('load', ()=> {
+    navBarTransition();
+})
 
 /*
 menuButton.addEventListener('click', function(){
@@ -122,3 +153,4 @@ setInterval(() => {
         highlightsNextBtn.classList.remove('inactive');
     };
 }, 100);
+
