@@ -792,6 +792,7 @@ nav .responsive-btn {
 .highlights-button-container, .highlights-button {
     flex-shrink: 0;
     flex-grow: 0;
+    text-align: center;
 }
 
 .highlights-carousel-container button, .socials-carousel button {
