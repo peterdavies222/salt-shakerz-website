@@ -789,6 +789,10 @@ nav .responsive-btn {
     align-items: center;
 }
 
+.highlights-button-container, .highlights-button {
+    flex-shrink: 0;
+}
+
 .highlights-carousel-container button, .socials-carousel button {
     align-self: center;
     width: 60px !important;
