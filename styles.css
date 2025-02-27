@@ -491,6 +491,16 @@ nav .responsive-btn {
     display: none;
 }
 
+.hosts-msg-end {
+    text-align: center;
+    color: var(--beige);
+    font-weight: 600;
+}
+
+.hosts-msg-end i {
+    margin-right: 0.5rem;
+}
+
 /* =============================== Episodes section */
 
 #episodes {
