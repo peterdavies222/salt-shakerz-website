@@ -1039,7 +1039,7 @@ nav .responsive-btn {
 }
 
 #contact p.body-text {
-    margin: 30px auto 60px auto;
+    margin: 45px auto;
 }
 
 #contact .contact-addresses {
@@ -1300,6 +1300,9 @@ footer img:hover {
     }
     #contact p.body-text {
         margin: 45px 0;
+    }
+    .contact-addresses-placeholder p {
+        font-size: 1rem;
     }
     .contact-addresses {
         max-width: calc(100% - 100px);
