@@ -817,6 +817,7 @@ nav .responsive-btn {
     font-weight: bold;
     font-size: 2rem;
     transition: opacity 0.2s, transform 0.2s;
+    padding: 0;
 }
 
 .highlights-carousel-container button.inactive {
